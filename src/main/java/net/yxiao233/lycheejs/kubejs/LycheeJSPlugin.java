@@ -30,7 +30,7 @@ public class LycheeJSPlugin implements KubeJSPlugin {
     public void registerBindings(BindingRegistry bindings) {
         bindings.add("ContextualBuilder", ContextualBuilder.class);
         bindings.add("PostBuilder", PostBuilder.class);
-        bindings.add("BlockPredicate", BlockPredicateWrapper.class);
-        bindings.add("SizedIngredient", SizedIngredientWrapper.class);
+        bindings.add("BlockPredicateWrapper", BlockPredicateWrapper.class);
+        bindings.add("SizedIngredientWrapper", SizedIngredientWrapper.class);
     }
 }

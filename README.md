@@ -4,9 +4,9 @@ ServerEvents.recipes(event =>{
     let contextual = ContextualBuilder.create()
     event.recipes.lychee.block_clicking(
         [
-            SizedIngredient.of("minecraft:gold_block")
+            SizedIngredientWrapper.of("minecraft:gold_block")
         ],
-        BlockPredicate.block("minecraft:iron_block"),
+        BlockPredicateWrapper.block("minecraft:iron_block"),
         [
             post.withChance(0.6).dropItem("minecraft:gold_block")
         ]
@@ -14,9 +14,9 @@ ServerEvents.recipes(event =>{
 
     event.recipes.lychee.item_inside(
         [
-            SizedIngredient.of("minecraft:gravel")
+            SizedIngredientWrapper.of("minecraft:gravel")
         ],
-        BlockPredicate.block("minecraft:water"),
+        BlockPredicateWrapper.block("minecraft:water"),
         [
             post.dropItem("minecraft:sand")
         ],
@@ -33,16 +33,16 @@ ServerEvents.recipes(event =>{
     )
 
     event.recipes.lychee.block_crushing(
-        BlockPredicate.ANVIL,
-        BlockPredicate.ANY,
-        SizedIngredient.of("minecraft:cobblestone"),
+        BlockPredicateWrapper.ANVIL,
+        BlockPredicateWrapper.ANY,
+        SizedIngredientWrapper.of("minecraft:cobblestone"),
         [
             post.withChance(0.6).dropItem("minecraft:gravel")
         ]
     )
 
     event.recipes.lychee.block_exploding(
-        BlockPredicate.block("minecraft:grass_block"),
+        BlockPredicateWrapper.block("minecraft:grass_block"),
         [
             post.withChance(0.6).dropItem("minecraft:gravel")
         ]
@@ -50,20 +50,20 @@ ServerEvents.recipes(event =>{
 
     event.recipes.lychee.block_interacting(
         [
-            SizedIngredient.of("minecraft:gold_ingot")
+            SizedIngredientWrapper.of("minecraft:gold_ingot")
         ],
-        BlockPredicate.block("minecraft:iron_block"),
+        BlockPredicateWrapper.block("minecraft:iron_block"),
         post.withChance(0.6).consumeAndPlace("minecraft:gold_block")
     )
 
     event.recipes.lychee.dripstone_dripping(
-        BlockPredicate.block("minecraft:water"),
-        BlockPredicate.block("minecraft:dirt"),
+        BlockPredicateWrapper.block("minecraft:water"),
+        BlockPredicateWrapper.block("minecraft:dirt"),
         post.withChance(0.6).consumeAndPlace("minecraft:clay")
     )
 
     event.recipes.lychee.item_burning(
-        SizedIngredient.of("#minecraft:logs"),
+        SizedIngredientWrapper.of("#minecraft:logs"),
         [
             post.dropItem("minecraft:coal")
         ]
@@ -71,7 +71,7 @@ ServerEvents.recipes(event =>{
 
     event.recipes.lychee.item_exploding(
         [
-            SizedIngredient.of("minecraft:cobblestone")
+            SizedIngredientWrapper.of("minecraft:cobblestone")
         ],
         [
             post.dropItem("minecraft:gravel")
@@ -80,7 +80,7 @@ ServerEvents.recipes(event =>{
 
     event.recipes.lychee.lightning_channeling(
         [
-            SizedIngredient.of("minecraft:cobblestone")
+            SizedIngredientWrapper.of("minecraft:cobblestone")
         ],
         [
             post.dropItem("minecraft:gravel")
@@ -88,7 +88,7 @@ ServerEvents.recipes(event =>{
     )
 
     event.recipes.lychee.random_block_ticking(
-        BlockPredicate.block("minecraft:iron_block"),
+        BlockPredicateWrapper.block("minecraft:iron_block"),
         [
             post.dropItem("minecraft:dirt")
         ]
