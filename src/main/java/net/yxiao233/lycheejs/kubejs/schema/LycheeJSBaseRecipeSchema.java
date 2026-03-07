@@ -8,12 +8,9 @@ import net.yxiao233.lycheejs.kubejs.component.ContextualHolderComponent;
 import net.yxiao233.lycheejs.kubejs.component.PostActionComponent;
 import net.yxiao233.lycheejs.kubejs.component.SizedIngredientComponent;
 import snownee.kiwi.recipe.SizedIngredient;
-import snownee.lychee.datagen.ActionBuilder;
 import snownee.lychee.util.action.PostAction;
 import snownee.lychee.util.contextual.ContextualHolder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public interface LycheeJSBaseRecipeSchema {

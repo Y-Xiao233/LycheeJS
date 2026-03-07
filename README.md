@@ -12,6 +12,15 @@ ServerEvents.recipes(event =>{
         ]
     ).ghost(true)
 
+    // Example using Empty for empty hand
+    event.recipes.lychee.block_clicking(
+        [Empty], // Empty hand - no item required
+        BlockPredicateWrapper.block("minecraft:stone"),
+        [
+            post.withChance(0.75).dropItem("minecraft:stick")
+        ]
+    )
+
     event.recipes.lychee.item_inside(
         [
             SizedIngredientWrapper.of("minecraft:gravel")

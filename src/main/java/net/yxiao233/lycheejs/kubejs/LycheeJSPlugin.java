@@ -32,5 +32,6 @@ public class LycheeJSPlugin implements KubeJSPlugin {
         bindings.add("PostBuilder", PostBuilder.class);
         bindings.add("BlockPredicateWrapper", BlockPredicateWrapper.class);
         bindings.add("SizedIngredientWrapper", SizedIngredientWrapper.class);
+        bindings.add("Empty", SizedIngredientWrapper.empty());
     }
 }

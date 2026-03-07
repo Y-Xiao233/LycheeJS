@@ -35,6 +35,11 @@ public interface SizedIngredientWrapper {
     }
 
     @HideFromJS
+    static SizedIngredient empty(){
+        return of(Ingredient.EMPTY, 1);
+    }
+
+    @HideFromJS
     static ParsedItem parse(String s, boolean single) {
         try {
             return ParsedItem.read(new StringReader(s), single);
