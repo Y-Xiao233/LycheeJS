@@ -15,9 +15,11 @@ import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.phys.Vec3;
 import snownee.lychee.action.*;
 import snownee.lychee.action.Execute;
+import snownee.lychee.action.input.DamageItem;
 import snownee.lychee.action.input.PreventDefault;
 import snownee.lychee.contextual.*;
 import snownee.lychee.datagen.ActionBuilder;
+import snownee.lychee.util.Reference;
 import snownee.lychee.util.action.PostAction;
 import snownee.lychee.util.action.PostActionCommonProperties;
 import snownee.lychee.util.context.LycheeContext;
@@ -302,6 +304,19 @@ public class PostBuilder {
     @Info("Object block")
     public PostAction setBlock(Object o){
         return action(new SetBlock(pack(),BlockPredicateWrapper.block(o)));
+    }
+    @Info("int damage, Reference target")
+    public PostAction damageItem(int damage, Reference target){
+        return action(new DamageItem(pack(), damage, target));
+    }
+
+    @Info("int damage")
+    public PostAction damageItem(int damage){
+        return action(new DamageItem(pack(), damage, Reference.DEFAULT));
+    }
+
+    public PostAction damageItem(){
+        return damageItem(1);
     }
 
     @HideFromJS
